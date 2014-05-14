@@ -12,7 +12,7 @@ class TextCenterer
       stripped_lines_of_text << stripped_line
     end
 
-    longest_line = stripped_lines_of_text.sort[0].length
+    longest_line = stripped_lines_of_text.sort_by { |line| line.length }.last.length
 
     centered_text = ""
     buffer = 0

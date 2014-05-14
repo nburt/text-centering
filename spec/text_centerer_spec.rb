@@ -15,4 +15,10 @@ describe TextCenterer do
     expect(text_centerer.center).to eq "Hello my name is\n   Nathanael"
   end
 
+  it 'can handle if the text is not already in alphabetical order' do
+    text = "Hello my name is\nBurt"
+    text_centerer = TextCenterer.new(text)
+    expect(text_centerer.center).to eq "Hello my name is\n      Burt"
+  end
+
 end
