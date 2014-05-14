@@ -15,19 +15,16 @@ class TextCenterer
     longest_line = stripped_lines_of_text.sort[0].length
 
     centered_text = ""
-    start_buffer = 0
-    end_buffer = 0
+    buffer = 0
     stripped_lines_of_text.each do |line|
       if line.length < longest_line
         if (longest_line - line.length).even?
-          start_buffer = (longest_line - line.length) / 2
-          end_buffer = (longest_line - line.length) / 2
+          buffer = (longest_line - line.length) / 2
         else
-          start_buffer = (longest_line - line.length) / 2
-          end_buffer = ((longest_line - line.length) / 2) + 1
+          buffer = (longest_line - line.length) / 2
         end
       end
-      centered_text << "#{' ' * start_buffer }#{line}#{' ' * end_buffer }\n"
+      centered_text << "#{' ' * buffer }#{line}\n"
     end
     centered_text.chop
   end
